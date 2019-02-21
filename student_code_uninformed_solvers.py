@@ -3,7 +3,13 @@ from solver import *
 
 class SolverDFS(UninformedSolver):
     def __init__(self, gameMaster, victoryCondition):
-        super().__init__(gameMaster, victoryCondition)
+        #super().__init__(gameMaster, victoryCondition)
+        self.gm = gameMaster
+        self.nextG = [GameState(self.gm.getGameState(), 0, None)]
+        self.visited = dict()
+        self.currentState = GameState(self.gm.getGameState(), 0, None)
+        self.visited[self.currentState] = True
+        self.victoryCondition = victoryCondition
 
     def solveOneStep(self):
         """
@@ -108,7 +114,13 @@ class SolverDFS(UninformedSolver):
 
 class SolverBFS(UninformedSolver):
     def __init__(self, gameMaster, victoryCondition):
-        super().__init__(gameMaster, victoryCondition)
+        #super().__init__(gameMaster, victoryCondition)
+        self.gm = gameMaster
+        self.nextG = [GameState(self.gm.getGameState(), 0, None)]
+        self.visited = dict()
+        self.currentState = GameState(self.gm.getGameState(), 0, None)
+        self.visited[self.currentState] = True
+        self.victoryCondition = victoryCondition
 
     def solveOneStep(self):
         """

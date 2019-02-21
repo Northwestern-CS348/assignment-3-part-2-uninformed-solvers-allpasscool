@@ -16,6 +16,7 @@ class UninformedSolver(object):
 
     def __init__(self, gameMaster, victoryCondition):
         self.gm = gameMaster
+        self.nextG = [GameState(self.gm.getGameState(), 0, None)]
         self.visited = dict()
         self.currentState = GameState(self.gm.getGameState(), 0, None)
         self.visited[self.currentState] = True
